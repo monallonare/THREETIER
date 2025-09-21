@@ -24,7 +24,7 @@ spec:
       serviceAccountName: ecr-access-sa  # ✅ Use the correct IAM service account
       containers:
         - name: api
-          image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/backend:6
+          image: 407622020962.dkr.ecr.us-east-1.amazonaws.com/backend:8
           imagePullPolicy: Always
           env:
             - name: MONGO_CONN_STR

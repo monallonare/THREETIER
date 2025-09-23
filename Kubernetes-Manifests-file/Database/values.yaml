@@ -1,0 +1,12 @@
+server:
+  initContainers:
+    - name: fix-permissions
+      image: busybox
+      command: ["sh", "-c", "chown -R 65534:65534 /data"]
+      volumeMounts:
+        - name: storage-volume
+          mountPath: /data
+  securityContext:
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
